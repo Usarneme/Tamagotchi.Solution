@@ -1,8 +1,34 @@
 @{
-    ViewData["Title"] = "Tamagotchi - New";
+  ViewData["Title"] = "Tamagotchi - New";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+  <div class="container">
+    <div class="card welcome-card row p-5 m-2">
+      <h1 class="display-4 mt-0 pb-5">Tamagotchi</h1>
+      <h2>Create a New Pet!</h2>
+      <div class="container">
+        <div class="row">
+          <div class="card p-2">
+            <h3><strong>Name:</strong> Rusty</h3>
+            <h4><strong class="border-bottom">Stats:</strong></h4>
+            <h5>Hunger: 40</h5>
+            <h5>Sleepiness: 100</h5>
+            <h5>Attention Needed: 60</h5>
+            <form action="/Tamagotchi/new" method="post" class="form-inline">
+              <input type="hidden" name="Name" value="Rusty">
+              <input type="hidden" name="Hunger" value="40">
+              <input type="hidden" name="Sleepiness" value="100">
+              <input type="hidden" name="AttentionNeed" value="60">
+              <button type="submit" class="btn btn-block btn-info mb-2">Pick Me!</button>
+            </form>
+          </div>
+        </div>
+      </div>
 
+      @* default 1 *@
+      @* default 2 *@
+      @* custom *@
+    </div>
+  </div>
 </div>

@@ -1,0 +1,31 @@
+@using TamagotchiNamespace;
+
+@{
+  ViewData["Title"] = "Tamagotchi - Home";
+}
+
+<div class="text-center">
+  <div class="container">
+    <div class="card welcome-card row p-5 m-2">
+      <h1 class="display-4 mt-0 pb-5">Tamagotchi Home</h1>
+      <h2>View all your Tamagotchis here</h2>
+
+      <div class="container">
+        <div class="row">
+          <h1>@Tamagotchi.allTamagotchis.Count</h1>
+          @foreach (TamagotchiNamespace.Tamagotchi pet in Model)
+          {
+            <div class="card p-2">
+              <h3><strong>Name:</strong> @pet.Name</h3>
+              <h4><strong class="border-bottom">Stats:</strong></h4>
+              <h5>Hunger: @pet.Hunger</h5>
+              <h5>Sleepiness: @pet.Sleepiness</h5>
+              <h5>Attention Needed: @pet.AttentionNeed</h5>
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

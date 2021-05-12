@@ -11,7 +11,7 @@ namespace TamagotchiNamespace
     public string Name { get; }
     public int ID { get; }
     private static int _idCounter = 1;
-    private static List<Tamagotchi> _allTamagotchis = new List<Tamagotchi>();
+    public static List<Tamagotchi> allTamagotchis = new List<Tamagotchi>();
 
     public Tamagotchi(int hunger, int sleepiness, int attentionNeed, string name)
     {
@@ -21,7 +21,7 @@ namespace TamagotchiNamespace
       Name = name;
       ID = _idCounter;
       _idCounter += 1;
-      _allTamagotchis.Add(this);
+      allTamagotchis.Add(this);
     }
 
     public void Feed(Tamagotchi thisPet)
@@ -44,7 +44,7 @@ namespace TamagotchiNamespace
 
     public static void PassTime()
     {
-      foreach(Tamagotchi tamagotchi in _allTamagotchis)
+      foreach(Tamagotchi tamagotchi in allTamagotchis)
       {
         tamagotchi.Hunger -= 10;
         tamagotchi.Sleepiness -= 10;
