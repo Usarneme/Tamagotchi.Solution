@@ -20,10 +20,6 @@ namespace TamagotchiNamespace
       Name = name;
       _allTamagotchis.Add(this);
     }
-    public static void ClearAll()
-    {
-      // todo
-    }
 
     public static void PassTime()
     {

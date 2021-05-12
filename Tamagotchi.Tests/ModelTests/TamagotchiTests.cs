@@ -5,13 +5,8 @@ using TamagotchiNamespace;
 namespace TamagotchiNamespace.Test
 {
   [TestClass]
-  public class TamagotchiTests : IDisposable
+  public class TamagotchiTests
   {
-    public void Dispose()
-    {
-      Tamagotchi.ClearAll();
-    }
-
     [TestMethod]
     public void CreateInstance_IsTamagotchi_True()
     {
