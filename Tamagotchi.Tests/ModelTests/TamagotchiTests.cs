@@ -16,9 +16,19 @@ namespace TamagotchiNamespace.Test
     public static void CreateInstance_IsTamagotchi_True()
     {
       // Arrange
-      Tamagotchi newPet = new Tamagotchi();
+      Tamagotchi newPet = new Tamagotchi(20);
       //Act, Assert
       Assert.AreEqual(typeof(Tamagotchi), newPet.GetType());
     }
+    [TestMethod]
+    public static void Tamagotchi_HasAHungerProperty_Property()
+    {
+      int hungerLevel = 20;
+      Tamagotchi newPet = new Tamagotchi(hungerLevel);
+      int actualHungerLevel = newPet.Hunger;
+      Assert.AreEqual(hungerLevel, actualHungerLevel);
+    }
+
+
   }
 }

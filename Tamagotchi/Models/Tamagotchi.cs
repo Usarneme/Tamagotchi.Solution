@@ -2,9 +2,11 @@ namespace TamagotchiNamespace
 {
   public class Tamagotchi
   {
-    public Tamagotchi()
+
+    public int Hunger { get; set; }
+    public Tamagotchi(int hunger)
     {
-      // todo
+      Hunger = hunger;
     }
     public static void ClearAll()
     {
