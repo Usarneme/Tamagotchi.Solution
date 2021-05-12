@@ -68,6 +68,7 @@ namespace TamagotchiNamespace
         tamagotchi.SleepinessLevel -= 10;
         tamagotchi.AttentionLevel -= 10;
       }
+      allTamagotchis.RemoveAll(tamagotchi => tamagotchi.HungerLevel <= 0 || tamagotchi.SleepinessLevel <= 0 || tamagotchi.AttentionLevel <= 0);
     }
   }
 }
