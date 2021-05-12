@@ -21,7 +21,7 @@ namespace TamagotchiNamespace.Test
     {
       int hungerLevel = 30;
       Tamagotchi newPet = new Tamagotchi(hungerLevel, 20 , 20, "Name");
-      int actualHungerLevel = newPet.Hunger;
+      int actualHungerLevel = newPet.HungerLevel;
       Assert.AreEqual(hungerLevel, actualHungerLevel);
     }
 
@@ -31,7 +31,7 @@ namespace TamagotchiNamespace.Test
     {
       int sleepinessLevel = 30;
       Tamagotchi newPet = new Tamagotchi(20, sleepinessLevel, 20, "Name");
-      int actualSleepinessLevel = newPet.Sleepiness;
+      int actualSleepinessLevel = newPet.SleepinessLevel;
       Assert.AreEqual(sleepinessLevel, actualSleepinessLevel);
     }
 
@@ -41,7 +41,7 @@ namespace TamagotchiNamespace.Test
     {
       int attentionNeedLevel = 30;
       Tamagotchi newPet = new Tamagotchi(20, 20, attentionNeedLevel, "Name");
-      int actualAttentionNeedLevel = newPet.AttentionNeed;
+      int actualAttentionNeedLevel = newPet.AttentionLevel;
       Assert.AreEqual(attentionNeedLevel, actualAttentionNeedLevel);
     }
 
@@ -49,8 +49,8 @@ namespace TamagotchiNamespace.Test
     public void Tamagotchi_ChangeSleepinessLevel_SleepinessPropertyReduced()
     {
       Tamagotchi newPet = new Tamagotchi(20, 20, 20, "Name");
-      newPet.Sleepiness = 10;
-      Assert.AreEqual(newPet.Sleepiness, 10);
+      newPet.SleepinessLevel = 10;
+      Assert.AreEqual(newPet.SleepinessLevel, 10);
     }
     [TestMethod]
     public void Tamagotchi_NameIt_HasAName()
@@ -66,7 +66,7 @@ namespace TamagotchiNamespace.Test
       Tamagotchi pet1 = new Tamagotchi(50,50,50,"one");
       Tamagotchi pet2 = new Tamagotchi(40,40,40,"two");
       Tamagotchi.PassTime();
-      Assert.AreEqual(pet1.Sleepiness, 40);
+      Assert.AreEqual(pet1.SleepinessLevel, 40);
     }
 
     [TestMethod]
@@ -75,7 +75,7 @@ namespace TamagotchiNamespace.Test
       Tamagotchi pet1 = new Tamagotchi(50,50,50,"one");
       Tamagotchi pet2 = new Tamagotchi(40,40,40,"two");
       Tamagotchi.PassTime();
-      Assert.AreEqual(pet2.Hunger, 30);
+      Assert.AreEqual(pet2.HungerLevel, 30);
     }
   }
 }
