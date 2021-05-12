@@ -1,15 +1,24 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tamagotchi.Models;
+using System;
+using TamagotchiNamespace;
 
-namespace Tamagotchi.Tests
+namespace TamagotchiNamespace.Test
 {
   [TestClass]
-  public class TamagotchiTests
+  public class TamagotchiTests : IDisposable
   {
-    [TestMethod]
-    public static void SomeTest()
+    public void Dispose()
     {
-      // todo
+      Tamagotchi.ClearAll();
+    }
+
+    [TestMethod]
+    public static void CreateInstance_IsTamagotchi_True()
+    {
+      // Arrange
+      Tamagotchi newPet = new Tamagotchi();
+      //Act, Assert
+      Assert.AreEqual(typeof(Tamagotchi), newPet.GetType());
     }
   }
 }

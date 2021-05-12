@@ -1,7 +1,14 @@
-namespace Tamagotchi.Models
+namespace TamagotchiNamespace
 {
   public class Tamagotchi
   {
-    // stuff..
+    public Tamagotchi()
+    {
+      // todo
+    }
+    public static void ClearAll()
+    {
+      // todo
+    }
   }
 }
