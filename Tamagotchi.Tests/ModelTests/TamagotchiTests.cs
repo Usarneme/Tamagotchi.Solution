@@ -16,7 +16,7 @@ namespace TamagotchiNamespace.Test
     public void CreateInstance_IsTamagotchi_True()
     {
       // Arrange
-      Tamagotchi newPet = new Tamagotchi(20, 20, 20);
+      Tamagotchi newPet = new Tamagotchi(20, 20, 20, "Name");
       //Act, Assert
       Assert.AreEqual(typeof(Tamagotchi), newPet.GetType());
     }
@@ -25,7 +25,7 @@ namespace TamagotchiNamespace.Test
     public void Tamagotchi_HasAHungerProperty_Property()
     {
       int hungerLevel = 30;
-      Tamagotchi newPet = new Tamagotchi(hungerLevel, 20 , 20);
+      Tamagotchi newPet = new Tamagotchi(hungerLevel, 20 , 20, "Name");
       int actualHungerLevel = newPet.Hunger;
       Assert.AreEqual(hungerLevel, actualHungerLevel);
     }
@@ -35,7 +35,7 @@ namespace TamagotchiNamespace.Test
     public void Tamagotchi_HasASleepinessProperty_Property()
     {
       int sleepinessLevel = 30;
-      Tamagotchi newPet = new Tamagotchi(20, sleepinessLevel, 20);
+      Tamagotchi newPet = new Tamagotchi(20, sleepinessLevel, 20, "Name");
       int actualSleepinessLevel = newPet.Sleepiness;
       Assert.AreEqual(sleepinessLevel, actualSleepinessLevel);
     }
@@ -45,7 +45,7 @@ namespace TamagotchiNamespace.Test
     public void Tamagotchi_HasAnAttentionNeedProperty_Property()
     {
       int attentionNeedLevel = 30;
-      Tamagotchi newPet = new Tamagotchi(20, 20, attentionNeedLevel);
+      Tamagotchi newPet = new Tamagotchi(20, 20, attentionNeedLevel, "Name");
       int actualAttentionNeedLevel = newPet.AttentionNeed;
       Assert.AreEqual(attentionNeedLevel, actualAttentionNeedLevel);
     }
@@ -53,10 +53,24 @@ namespace TamagotchiNamespace.Test
     [TestMethod]
     public void Tamagotchi_ChangeSleepinessLevel_SleepinessPropertyReduced()
     {
-      Tamagotchi newPet = new Tamagotchi(20, 20, 20);
+      Tamagotchi newPet = new Tamagotchi(20, 20, 20, "Name");
       newPet.Sleepiness = 10;
       Assert.AreEqual(newPet.Sleepiness, 10);
     }
+    [TestMethod]
+    public void Tamagotchi_NameIt_HasAName()
+    {
+      string name = "Rusty";
+      Tamagotchi newPet = new Tamagotchi(20, 20, 20, name);
+      Assert.AreEqual(newPet.Name, name);
+    }
+
+    // [TestMethod]
+    // public void Tamagotchis_PassTime_AllPropertiesReduce()
+    // {
+    //   // static method acts on ALL tamagotchis
+
+    // }
 
   }
 }
