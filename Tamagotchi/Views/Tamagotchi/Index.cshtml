@@ -12,15 +12,23 @@
 
       <div class="container">
         <div class="row">
-          <h1>@Tamagotchi.allTamagotchis.Count</h1>
           @foreach (TamagotchiNamespace.Tamagotchi pet in Model)
           {
             <div class="card p-2">
               <h3><strong>Name:</strong> @pet.Name</h3>
               <h4><strong class="border-bottom">Stats:</strong></h4>
-              <h5>Hunger: @pet.Hunger</h5>
-              <h5>Sleepiness: @pet.Sleepiness</h5>
-              <h5>Attention Needed: @pet.AttentionNeed</h5>
+              <h5>Hunger: @pet.HungerLevel</h5>
+              <h5>Sleepiness: @pet.SleepinessLevel</h5>
+              <h5>Attention Needed: @pet.AttentionLevel</h5>
+              <form action="/Tamagotchi/@pet.ID/feed" method="post">
+                <button type="submit" class="btn btn-block mb-2 btn-success">Feed Me!</button>
+              </form>
+              <form action="/Tamagotchi/@pet.ID/rest" method="post">
+                <button type="submit" class="btn btn-block mb-2 btn-primary">Let Me Rest!</button>
+              </form>
+              <form action="/Tamagotchi/@pet.ID/attention" method="post">
+                <button type="submit" class="btn btn-block mb-2 btn-warning">Pay Attention To Me!</button>
+              </form>
             </div>
           }
         </div>

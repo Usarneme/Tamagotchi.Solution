@@ -30,5 +30,25 @@ namespace Tamagotchi.Controllers
       return RedirectToAction("Index");
     }
 
+    [HttpPost("/Tamagotchi/{Id}/feed")]
+    public ActionResult Feed(string id)
+    {
+      TamagotchiNamespace.Tamagotchi.Feed(int.Parse(id));
+      return RedirectToAction("Index");
+    }
+
+    [HttpPost("/Tamagotchi/{Id}/rest")]
+    public ActionResult Rest(string id)
+    {
+      TamagotchiNamespace.Tamagotchi.Rest(int.Parse(id));
+      return RedirectToAction("Index");
+    }
+
+    [HttpPost("/Tamagotchi/{Id}/attention")]
+    public ActionResult Attention(string id)
+    {
+      TamagotchiNamespace.Tamagotchi.GiveAttention(int.Parse(id));
+      return RedirectToAction("Index");
+    }
   }
 }

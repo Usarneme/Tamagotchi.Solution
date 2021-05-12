@@ -5,40 +5,58 @@ namespace TamagotchiNamespace
   public class Tamagotchi
   {
 
-    public int Hunger { get; set; }
-    public int Sleepiness { get; set; }
-    public int AttentionNeed { get; set; }
+    public int HungerLevel { get; set; }
+    public int SleepinessLevel { get; set; }
+    public int AttentionLevel { get; set; }
     public string Name { get; }
     public int ID { get; }
     private static int _idCounter = 1;
     public static List<Tamagotchi> allTamagotchis = new List<Tamagotchi>();
 
-    public Tamagotchi(int hunger, int sleepiness, int attentionNeed, string name)
+    public Tamagotchi(int hunger, int sleepiness, int attention, string name)
     {
-      Hunger = hunger;
-      Sleepiness = sleepiness;
-      AttentionNeed = attentionNeed;
+      HungerLevel = hunger;
+      SleepinessLevel = sleepiness;
+      AttentionLevel = attention;
       Name = name;
       ID = _idCounter;
       _idCounter += 1;
       allTamagotchis.Add(this);
     }
 
-    public void Feed(Tamagotchi thisPet)
+    public static void Feed(int id)
     {
-      thisPet.Hunger += 60;
+      foreach(Tamagotchi thisPet in allTamagotchis)
+      {
+        if (thisPet.ID == id)
+        {
+          thisPet.HungerLevel += 60;
+        }
+      }
       PassTime();
     }
 
-    public void Rest(Tamagotchi thisPet)
+    public static void Rest(int id)
     {
-      thisPet.Sleepiness += 60;
+      foreach(Tamagotchi thisPet in allTamagotchis)
+      {
+        if (thisPet.ID == id)
+        {
+          thisPet.SleepinessLevel += 60;
+        }
+      }
       PassTime();
     }
 
-    public void GiveAttention(Tamagotchi thisPet)
+    public static void GiveAttention(int id)
     {
-      thisPet.AttentionNeed += 60;
+      foreach(Tamagotchi thisPet in allTamagotchis)
+      {
+        if (thisPet.ID == id)
+        {
+          thisPet.AttentionLevel += 60;
+        }
+      }
       PassTime();
     }
 
@@ -46,9 +64,9 @@ namespace TamagotchiNamespace
     {
       foreach(Tamagotchi tamagotchi in allTamagotchis)
       {
-        tamagotchi.Hunger -= 10;
-        tamagotchi.Sleepiness -= 10;
-        tamagotchi.AttentionNeed -= 10;
+        tamagotchi.HungerLevel -= 10;
+        tamagotchi.SleepinessLevel -= 10;
+        tamagotchi.AttentionLevel -= 10;
       }
     }
   }
