@@ -65,12 +65,22 @@ namespace TamagotchiNamespace.Test
       Assert.AreEqual(newPet.Name, name);
     }
 
-    // [TestMethod]
-    // public void Tamagotchis_PassTime_AllPropertiesReduce()
-    // {
-    //   // static method acts on ALL tamagotchis
+    [TestMethod]
+    public void Tamagotchis_PassTime_FirstInstanceSleepinessReduced()
+    {
+      Tamagotchi pet1 = new Tamagotchi(50,50,50,"one");
+      Tamagotchi pet2 = new Tamagotchi(40,40,40,"two");
+      Tamagotchi.PassTime();
+      Assert.AreEqual(pet1.Sleepiness, 40);
+    }
 
-    // }
-
+    [TestMethod]
+    public void Tamagotchis_PassTime_SecondInstanceHungerReduced()
+    {
+      Tamagotchi pet1 = new Tamagotchi(50,50,50,"one");
+      Tamagotchi pet2 = new Tamagotchi(40,40,40,"two");
+      Tamagotchi.PassTime();
+      Assert.AreEqual(pet2.Hunger, 30);
+    }
   }
 }
